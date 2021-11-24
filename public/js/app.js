@@ -20144,10 +20144,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     closeOnSelect: false,
     searchable: true,
     createTag: true,
-    "track-by": "first_name",
+    "track-by": "full_name",
     valueProp: "id",
     placeholder: "Choose Owners",
-    label: "first_name",
+    label: "full_name",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'is-invalid': _ctx.formErrors.hasOwnProperty('owners')
     })
@@ -20165,7 +20165,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     searchable: true,
     valueProp: "id",
     placeholder: "Choose Main Owner",
-    label: "first_name",
+    label: "full_name",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'is-invalid': _ctx.formErrors.hasOwnProperty('main_owner')
     })
@@ -20204,6 +20204,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
+  key: 0,
   "class": "card"
 };
 var _hoisted_2 = {
@@ -20313,7 +20314,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSubmit: _cache[4] || (_cache[4] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return $options.editProperty(_ctx.payload);
     }, ["prevent"]))
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, " Property - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.propertyData.address.house_name_number), 1
+  }, [_ctx.propertyData ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, " Property - " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.propertyData.address.house_name_number), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
@@ -20354,10 +20355,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     closeOnSelect: false,
     searchable: true,
     createTag: true,
-    "track-by": "first_name",
+    "track-by": "full_name",
     valueProp: "id",
     placeholder: "Choose Owners",
-    label: "first_name",
+    label: "full_name",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'is-invalid': _ctx.formErrors.hasOwnProperty('owners')
     })
@@ -20375,7 +20376,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     searchable: true,
     valueProp: "id",
     placeholder: "Choose Main Owner",
-    label: "first_name",
+    label: "full_name",
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
       'is-invalid': _ctx.formErrors.hasOwnProperty('main_owner')
     })
@@ -20393,7 +20394,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_23])])], 32
+  })]), _hoisted_23])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 32
   /* HYDRATE_EVENTS */
   );
 }
@@ -20480,7 +20481,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(property.main_owner.full_name), 1
     /* TEXT */
     ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(property.sub_owners, function (owner) {
-      return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(owner.full_name), 1
+      return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(owner.full_name), 1
       /* TEXT */
       );
     }), 256

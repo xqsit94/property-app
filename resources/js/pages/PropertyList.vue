@@ -19,7 +19,7 @@
                         <td>{{ property.address.house_name_number }}</td>
                         <td>{{ property.address.postcode }}</td>
                         <td>{{ property.main_owner.full_name }}</td>
-                        <td><span class="btn-sm" v-for="owner in property.sub_owners">{{ owner.full_name }}</span></td>
+                        <td><div class="btn-sm" v-for="owner in property.sub_owners">{{ owner.full_name }}</div></td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
                                 <router-link :to="`/show/${property.id}`" class="btn btn-sm btn-info">View</router-link>

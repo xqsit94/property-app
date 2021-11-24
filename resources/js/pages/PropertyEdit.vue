@@ -3,7 +3,7 @@
         class="form-horizontal"
         @submit.prevent="editProperty(payload)"
     >
-        <div class="card">
+        <div class="card" v-if="propertyData">
             <div class="card-header">
                 Property - {{ propertyData.address.house_name_number }}
             </div>
@@ -63,10 +63,10 @@
                             :closeOnSelect="false"
                             :searchable="true"
                             :createTag="true"
-                            track-by="first_name"
+                            track-by="full_name"
                             valueProp="id"
                             placeholder="Choose Owners"
-                            label="first_name"
+                            label="full_name"
                             :class="{
                                     'is-invalid': formErrors.hasOwnProperty(
                                         'owners'
@@ -90,7 +90,7 @@
                             :searchable="true"
                             valueProp="id"
                             placeholder="Choose Main Owner"
-                            label="first_name"
+                            label="full_name"
                             :class="{
                                     'is-invalid': formErrors.hasOwnProperty(
                                         'main_owner'
