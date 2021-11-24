@@ -10,3 +10,7 @@
 - Run the project by `php artisan serve`
 
 ** Seeding (--seed) will populate dummy data's for Users table along with Phone number relationship **
+
+## Factories & Postman Collection
+- Factories command check [FACTORIES.md](docs/FACTORIES.md)
+- [Postman Collection](docs/PropertyApp.postman_collection.json) for properties api

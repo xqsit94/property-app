@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "4aefbf12-2a85-424d-a8e6-51a4d2ecf6f2",
+		"name": "PropertyApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Property Index",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appUrl}}/api/properties",
+					"host": [
+						"{{appUrl}}"
+					],
+					"path": [
+						"api",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Property Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"12, 1st st, chennai\",\r\n    \"postcode\": \"600089\",\r\n    \"owners\": [\"4e481ec7-660a-40ce-a78d-6d81f20de68a\", \"6226ce43-5b29-482c-8d23-3236e4240833\"],\r\n    \"main_owner\": \"6226ce43-5b29-482c-8d23-3236e4240833\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appUrl}}/api/properties",
+					"host": [
+						"{{appUrl}}"
+					],
+					"path": [
+						"api",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Property Show",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appUrl}}/api/properties/5",
+					"host": [
+						"{{appUrl}}"
+					],
+					"path": [
+						"api",
+						"properties",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Property Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"12, 1st st, chennai\",\r\n    \"postcode\": \"600089\",\r\n    \"owners\": [\"4e481ec7-660a-40ce-a78d-6d81f20de68a\", \"6226ce43-5b29-482c-8d23-3236e4240833\", \"af062f69-b288-410c-b06e-df98128c26dd\"],\r\n    \"main_owner\": \"af062f69-b288-410c-b06e-df98128c26dd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appUrl}}/api/properties/4",
+					"host": [
+						"{{appUrl}}"
+					],
+					"path": [
+						"api",
+						"properties",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Property Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://property.test/api/properties/2",
+					"protocol": "http",
+					"host": [
+						"property",
+						"test"
+					],
+					"path": [
+						"api",
+						"properties",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Owners",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{appUrl}}/api/owners",
+					"host": [
+						"{{appUrl}}"
+					],
+					"path": [
+						"api",
+						"owners"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
