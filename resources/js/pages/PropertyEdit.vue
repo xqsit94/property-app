@@ -188,6 +188,10 @@ export default {
             this.updateProperty({ propertyId: this.$route.params.property, payload })
                 .then((response) => {
                     this.formErrors = []
+                    this.$store.commit(
+                        'PropertyStore/setProperties',
+                        {}
+                    )
                     this.$router.push({ name: 'property.list' })
                 })
                 .catch((error) => {

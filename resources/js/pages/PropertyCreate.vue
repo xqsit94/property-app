@@ -175,6 +175,11 @@ export default {
         createProperty(payload) {
             this.storeProperty(payload)
                 .then((response) => {
+                    this.formErrors = []
+                    this.$store.commit(
+                        'PropertyStore/setProperties',
+                        {}
+                    )
                     this.$router.push({ name: 'property.list' })
                 })
                 .catch((error) => {
