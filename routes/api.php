@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PropertyController;
+use App\Http\Controllers\OwnerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,5 @@ use App\Http\Controllers\PropertyController;
 */
 
 Route::apiResource("/properties", PropertyController::class);
+
+Route::get("/owners", [OwnerController::class, 'index']);

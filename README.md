@@ -6,5 +6,7 @@
 - Run `composer install`
 - Run `php artisan key:generate`
 - Run `php artisan migrate --seed`
+- Compiling Vue `npm i && npm run dev`
+- Run the project by `php artisan serve`
 
 ** Seeding (--seed) will populate dummy data's for Users table along with Phone number relationship **

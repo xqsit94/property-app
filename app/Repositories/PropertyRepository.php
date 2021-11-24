@@ -16,7 +16,8 @@ class PropertyRepository implements PropertyRepositoryInterface
      */
     public function list(): LengthAwarePaginator
     {
-        return Property::with(["address", "owners"])->paginate();
+        return Property::with(["address", "owners"])
+            ->orderBy("created_at", "desc")->paginate();
     }
 
     /**
