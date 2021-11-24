@@ -28,6 +28,9 @@
                             </div>
                         </td>
                     </tr>
+                    <tr class="text-center" v-if="properties && (properties.data).length < 1">
+                        <td colspan="5">No Property found</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
