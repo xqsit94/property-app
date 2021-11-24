@@ -4,7 +4,7 @@
             Property - {{ propertyData.address.house_name_number }}
         </div>
         <div class="card-body">
-            <h4>Property Detail</h4>
+            <h5>Property Detail</h5>
             <table class="table table-bordered table-sm">
                 <tbody>
                     <tr>
@@ -18,14 +18,12 @@
                     <tr>
                         <td><strong>Owners</strong></td>
                         <td>
-                            <span class="btn" v-for="owner in propertyData.sub_owners">
-                                {{ owner.full_name }}
-                            </span>
+                            <div class="btn-sm" v-for="owner in propertyData.sub_owners">{{ owner.full_name }}</div>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <h4>Main Owner Detail</h4>
+            <h5>Main Owner Detail</h5>
             <table class="table table-bordered table-sm">
                 <tbody>
                 <tr>
@@ -35,7 +33,7 @@
                 <tr v-if="propertyData.main_owner.phones">
                     <td><strong>Phone Number</strong></td>
                     <td>
-                        <div v-for="phone in propertyData.main_owner.phones">
+                        <div class="btn-sm" v-for="phone in propertyData.main_owner.phones">
                             <strong>{{ phone.type }}: </strong> {{ phone.number }}
                         </div>
                     </td>
