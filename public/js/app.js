@@ -19808,6 +19808,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   components: {
     Pagination: (v_pagination_3__WEBPACK_IMPORTED_MODULE_0___default())
   },
+  data: function data() {
+    return {
+      page: 1
+    };
+  },
   created: function created() {
     if (_.isEmpty(this.properties)) {
       this.listProperties();
@@ -20532,12 +20537,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   })]), _ctx.properties ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_pagination, {
-    modelValue: _ctx.properties.current_page,
+    modelValue: _ctx.page,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _ctx.properties.current_page = $event;
+      return _ctx.page = $event;
     }),
-    records: _ctx.properties.total,
-    "per-page": _ctx.properties.per_page,
+    records: _ctx.properties.total || 0,
+    "per-page": _ctx.properties.per_page || 15,
     onPaginate: $options.listProperties
   }, null, 8
   /* PROPS */

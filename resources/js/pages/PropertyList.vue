@@ -36,7 +36,7 @@
                 <router-link to="/create" class="btn btn-primary">Create Property</router-link>
             </div>
             <div class="float-end" v-if="properties">
-                <pagination v-model="properties.current_page" :records="properties.total" :per-page="properties.per_page" @paginate="listProperties"/>
+                <pagination v-model="page" :records="properties.total || 0" :per-page="properties.per_page || 15" @paginate="listProperties"/>
             </div>
         </div>
     </div>
@@ -50,6 +50,10 @@ export default {
     components: {
         Pagination
     },
+
+    data: () => ({
+        page: 1
+    }),
 
     created() {
         if (_.isEmpty(this.properties)) {
