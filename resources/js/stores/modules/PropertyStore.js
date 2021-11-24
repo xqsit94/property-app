@@ -26,20 +26,20 @@ const actions = {
             })
     },
 
-    getProperty: ({ commit }, fileId) => {
-        return PropertyApi.show(fileId)
+    getProperty: ({ commit }, propertyId) => {
+        return PropertyApi.show(propertyId)
     },
 
     storeProperty: ({ commit }, payload) => {
         return PropertyApi.store(payload)
     },
 
-    updateProperty: ({ commit }, { fileId, payload }) => {
-        return PropertyApi.update(fileId, payload)
+    updateProperty: ({ commit }, { propertyId, payload }) => {
+        return PropertyApi.update(payload, propertyId)
     },
 
-    deleteProperty: ({ commit }, fileId) => {
-        return PropertyApi.delete(fileId)
+    deleteProperty: ({ commit }, propertyId) => {
+        return PropertyApi.delete(propertyId)
     },
 }
 

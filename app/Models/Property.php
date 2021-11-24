@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Property extends Model
 {
     /**
+     * @var string[]
+     */
+    protected $appends = ['main_owner', 'sub_owners'];
+
+    /**
      * The property address
      *
      * @return HasOne
@@ -28,5 +33,20 @@ class Property extends Model
         return $this->belongsToMany(User::class, "owners")->withPivot(
             "main_owner"
         );
+    }
+
+    /**
+     * Fetches main owner
+     *
+     * @return mixed|null
+     */
+    public function getMainOwnerAttribute()
+    {
+        return $this->owners()->with('phones')->where('main_owner', true)->first();
+    }
+
+    public function getSubOwnersAttribute()
+    {
+        return $this->owners()->where('main_owner', false)->get();
     }
 }

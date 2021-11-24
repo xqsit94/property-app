@@ -18,12 +18,12 @@
                     <tr v-for="(property, i) in properties.data" :key="i">
                         <td>{{ property.address.house_name_number }}</td>
                         <td>{{ property.address.postcode }}</td>
-                        <td>Data</td>
-                        <td>Data</td>
+                        <td>{{ property.main_owner.full_name }}</td>
+                        <td><span class="btn-sm" v-for="owner in property.sub_owners">{{ owner.full_name }}</span></td>
                         <td class="text-center">
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-sm btn-info">View</button>
-                                <button type="button" class="btn btn-sm btn-warning">Edit</button>
+                                <router-link :to="`/show/${property.id}`" class="btn btn-sm btn-info">View</router-link>
+                                <router-link :to="`/edit/${property.id}`" class="btn btn-sm btn-warning">Edit</router-link>
                                 <button type="button" class="btn btn-sm btn-danger" @click="deleteData(property.id)">Delete</button>
                             </div>
                         </td>

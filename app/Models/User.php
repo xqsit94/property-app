@@ -13,6 +13,11 @@ class User extends Authenticatable
     use HasFactory, BindsOnUuid, GeneratesUuid;
 
     /**
+     * @var string[]
+     */
+    protected $appends = ['full_name'];
+
+    /**
      * @var bool
      */
     public $incrementing = false;
@@ -47,5 +52,15 @@ class User extends Authenticatable
     public function phones(): HasMany
     {
         return $this->hasMany(Phone::class);
+    }
+
+    /**
+     * Full Name attribute
+     *
+     * @return string
+     */
+    public function getFullNameAttribute(): string
+    {
+        return $this->first_name . ' ' . $this->last_name;
     }
 }

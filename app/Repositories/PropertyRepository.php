@@ -16,7 +16,7 @@ class PropertyRepository implements PropertyRepositoryInterface
      */
     public function list(): LengthAwarePaginator
     {
-        return Property::with(["address", "owners"])
+        return Property::with(["address"])
             ->orderBy("created_at", "desc")->paginate();
     }
 
@@ -54,7 +54,7 @@ class PropertyRepository implements PropertyRepositoryInterface
      */
     public function show($property): Property
     {
-        return $property->load(["address", "owners"]);
+        return $property->load(["address"]);
     }
 
     /**
