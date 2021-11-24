@@ -19651,6 +19651,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -19696,6 +19708,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _this2 = this;
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var owners;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -19704,22 +19717,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return _this2.get(_this2.$route.params.property);
 
             case 2:
-              if (_.isEmpty(_this2.owners)) {
-                _this2.getOwners();
+              if (!_.isEmpty(_this2.owners)) {
+                _context.next = 5;
+                break;
               }
 
+              _context.next = 5;
+              return _this2.getOwners();
+
+            case 5:
               if (_this2.propertyData) {
+                owners = _this2.propertyData.sub_owners.map(function (owner) {
+                  return owner.id;
+                });
+                owners = [].concat(_toConsumableArray(owners), [_this2.propertyData.main_owner.id]);
                 _this2.payload = {
                   address: _this2.propertyData.address.house_name_number,
                   postcode: _this2.propertyData.address.postcode,
-                  owners: _this2.propertyData.sub_owners.map(function (owner) {
-                    return owner.id;
-                  }),
+                  owners: owners,
                   main_owner: _this2.propertyData.main_owner.id
                 };
               }
 
-            case 4:
+            case 6:
             case "end":
               return _context.stop();
           }

@@ -157,14 +157,17 @@ export default {
     async created() {
         await this.get(this.$route.params.property)
         if (_.isEmpty(this.owners)) {
-            this.getOwners()
+            await this.getOwners()
         }
 
         if (this.propertyData) {
+            let owners = (this.propertyData.sub_owners).map(owner => owner.id);
+            owners = [...owners, this.propertyData.main_owner.id]
+
             this.payload = {
                 address: this.propertyData.address.house_name_number,
                 postcode: this.propertyData.address.postcode,
-                owners: (this.propertyData.sub_owners).map(owner => owner.id),
+                owners,
                 main_owner: this.propertyData.main_owner.id
             }
         }
