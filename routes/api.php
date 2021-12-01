@@ -17,4 +17,4 @@ use App\Http\Controllers\OwnerController;
 
 Route::apiResource("/properties", PropertyController::class);
 
-Route::get("/owners", [OwnerController::class, 'index']);
+Route::get("/owners", [OwnerController::class, 'index'])->name('owners.list');

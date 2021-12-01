@@ -14,3 +14,12 @@
 ## Factories & Postman Collection
 - Factories command check [FACTORIES.md](docs/FACTORIES.md)
 - [Postman Collection](docs/PropertyApp.postman_collection.json) for properties api
+
+## PHP Unit Testing
+
+- default testing database connection is given 'sqlite' inside [phpunit.xml](phpunit.xml)
+```xml
+<server name="DB_CONNECTION" value="sqlite"/>
+```
+- Redundant test methods are written in [TestHelperTrait](app/Traits/TestHelperTrait.php) for "DRY up"
+- to run test `php artisan test`
